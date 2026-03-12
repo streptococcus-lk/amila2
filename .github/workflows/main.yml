@@ -10,7 +10,7 @@ concurrency:
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 95
 
     steps:
       - name: Checkout Repo
@@ -33,7 +33,7 @@ jobs:
       - name: Start Bot (Auto Restart)
         run: |
           cd bot
-          timeout 340m bash -c '
+          timeout 90m bash -c '
           while true; do
             echo "Starting bot..."
             node index.js 2>&1 || true
